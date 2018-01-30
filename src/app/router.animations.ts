@@ -9,7 +9,7 @@ export function FadeInOut() {
                 'z-index': '888',
                 transform: 'scale(0)'
             }),
-            animate('0.5s ease-in-out',
+            animate('0.3s ease-in-out',
                 style({
                     opacity: 1,
                     transform: 'scale(1)'
@@ -22,7 +22,7 @@ export function FadeInOut() {
                 opacity: 1,
                 transform: 'scale(1)'
             }),
-            animate('0.5s ease-in-out',
+            animate('0.3s ease-in-out',
                 style({
                     opacity: 0,
                     transform: 'scale(0)'

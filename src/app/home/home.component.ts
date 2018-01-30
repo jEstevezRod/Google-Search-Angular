@@ -29,11 +29,14 @@ export class HomeComponent implements OnInit {
                 showCursor: false,
                 callback: () => {
                     $(".dos").typed({
-                        strings: ["developers.", "designers.", "people."],
+                        strings: ['<span class="pur">developers.</span>',
+                            '<span class="verd">designers.</span>',
+                            '<span class="toma">people.</span>'],
                         typeSpeed: 30,
                         backSpeed: 50,
                         backDelay: 500,
                         showCursor: false,
+                        
                     })
                 }
             })
