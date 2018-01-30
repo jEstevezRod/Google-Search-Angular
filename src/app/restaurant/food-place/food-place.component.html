@@ -1,0 +1,86 @@
+<section><img [src]="place?.icon" alt="">
+    <div id="titul">{{place?.name}}</div>
+    <div id="direc">{{place?.vicinity}} || {{place?.formatted_address}}</div>
+    <div id="rating"><img class="star" src="../../../assets/imgs/star.png" alt=""> {{place.rating}}</div>
+    <p>
+        <button class="btn btn-primary btn-sm" type="button" data-toggle="collapse" [attr.data-target]="'#' + place.id"
+                aria-expanded="false" aria-controls="collapseExample" (click)="getInfo(place.place_id)">Más información
+        </button>
+        <button class="btn btn-danger btn-sm" type="button" data-toggle="collapse" aria-expanded="false"
+                aria-controls="collapseExample" [attr.data-target]="'#a' + place.id" (click)="quitRadio()">Guíame aquí
+        </button>
+    </p>
+    <div class="collapsing new" [id]="place.id" style="width: 250%;  z-index: 50;">
+        <div class="card card-inverse text-center" style="background-color: #333; border-color: #333;">
+            <div class="card-block">
+                <h3 class="card-title">{{this.info?.result.name}}</h3>
+                <p class="card-text">Dirección: {{this.info?.result.formatted_address}}</p>
+                <p class="card-text">Teléfono: {{this.info?.result.formatted_phone_number}}</p>
+                <p class="card-text">Horario</p>
+                <p class="card-text white-space-pre">{{ this.info?.result.opening_hours.weekday_text | splitter }}</p>
+                <h5 class="text-left" style="color: #5fcbf2">Reviews:</h5>
+                <ul class="card-text dd"></ul>
+                <li class="border" *ngFor="let revi of this.info?.result.reviews">
+                    <div>
+                        <p class="">Autor: <span style="color: tomato">{{revi.author_name}}</span></p>
+                        <p>{{revi.text}}</p>
+                        <p>
+                            <small class="text-muted">{{revi.relative_time_description}}</small>
+                        </p>
+                    </div>
+
+                </li>
+                <a [href]="this.info?.result.website" class="btn btn-danger">Website</a>
+            </div>
+        </div>
+    </div>
+    <div class="collapsing new " [id]=" 'a' + place.id" style="width: 200%">
+        <div class="card card-inverse text-center" style="background-color: #333; border-color: #333;">
+            <div class="card-block">
+                <h3 class="card-title">How to come here?</h3>
+                <span><h5 class="mr-5 ml-5">First of all</h5><p
+                        class="card-text">1. Could you tell me where you are <strong
+                        class="rojo">clicking</strong> on the map?
+        </p></span>
+                <p class="card-text"> Método de desplazamiento: <select name="by" id="by" class="custom-select m-3"
+                                                                        [(ngModel)]="byway">
+                    <option value="driving">Driving</option>
+                    <option value="walking">Walking</option>
+                    <option value="transit">Public transport
+                    </option>
+                </select>
+                    <button class="btn btn-sm btn-info" (click)="getDirc()">Done</button>
+                </p>
+
+                <div [hidden]="esc">
+
+                    <p class="card-text">2. Are you here ? <br>
+                        {{this.direccion?.results[0].address_components[1].long_name}},{{this.direccion?.results[1].address_components[1].long_name}},
+                        {{this.direccion?.results[0].address_components[6].long_name}}
+                        <button class="btn btn-sm btn-info" (click)="getRoutes()">All right</button>
+                    </p>
+                    <div [hidden]="esc2">
+                        <h5 class="card-text" style="color: #5fcbf2">Rutas :</h5>
+                        <p class="card-text"><strong class="rojo">From</strong>
+                            {{this.rutas?.routes[0].legs[0].start_address}}<br>
+                            <strong class="rojo">to</strong>
+                            {{this.rutas?.routes[0].legs[0].end_address}}</p>
+                        <p class="card-text"><span style="color: #5fcbf2">Distancia total:</span>
+                            {{this.rutas?.routes[0].legs[0].distance.text}}<span style="color: #5fcbf2"> Tiempo aproximado: </span>
+                            {{this.rutas?.routes[0].legs[0].duration.text}}</p>
+                        <ul class="card-text ">
+                            <li class="card-text text-left dd"
+                                *ngFor="let ruta of this.rutas?.routes[0].legs[0].steps;let i = index">
+
+                                <span style="color: #5fcbf2">{{i + 1}}.</span>
+                                {{ruta.html_instructions | deleteTags}} durante {{ruta?.distance.value}} metros (
+                                duración aprox.
+                                {{ruta?.duration.text}} )<br>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

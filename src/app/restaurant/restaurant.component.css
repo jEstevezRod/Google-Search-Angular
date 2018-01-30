@@ -1,0 +1,49 @@
+
+agm-map {
+    height: 500px;
+    margin-bottom: 200px;
+}
+
+.marSup {
+    margin-top: 70px;
+}
+
+.marInf {
+    margin-bottom: 70px;
+}
+
+#canvas {
+    box-sizing: border-box;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-start;
+    text-align: center;
+}
+
+app-food-place {
+    background-color: #d3d3d3;
+    width: 32%;
+    height: 230px;
+    margin: 9px 7px;
+    box-sizing: border-box;
+    transition: all .2s ease-in-out;
+    padding: 15px;
+}
+
+app-food-place:hover {
+    transform: scale(1.05);
+    background-color: #ff4f5a;
+    z-index: 0;
+
+}
+
+#filt {
+    width: 150px;
+    height: 40px;
+}
+
+#filtro {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-end;
+}

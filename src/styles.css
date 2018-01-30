@@ -1,0 +1,27 @@
+
+body {
+    margin: 0px;
+    padding: 0px;
+    font-family: GeosansLight;
+
+}
+
+@font-face {
+    font-family: GeosansLight;
+    src: url("assets/geo_sans_light/GeosansLight.ttf");
+}
+
+@font-face {
+    font-family: "kindergarten" ;
+    src: url("assets/kinder/kindergarten.ttf");
+}
+
+@font-face {
+    font-family: "stranger" ;
+    src: url("assets/stranger/stranger.ttf");
+}
+
+@font-face {
+    font-family: "Millenia" ;
+    src: url("assets/millenia/Millenia.ttf");
+}

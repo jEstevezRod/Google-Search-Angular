@@ -1,0 +1,11 @@
+img {
+    padding-top: 50px;
+    width: 800px;
+    height: 800px;
+}
+
+.rec {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+}

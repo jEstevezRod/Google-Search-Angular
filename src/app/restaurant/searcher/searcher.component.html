@@ -1,0 +1,38 @@
+<div class="container mb-5 text-center">
+    <h1>Do you want eat something?</h1>
+</div>
+<div class="container">
+    <div class="dist">
+        <label for="food">What do you want to eat today?</label>
+        <select id="food" name="food" class="custom-select mb-2 mr-sm-2 mb-sm-0" [(ngModel)]="typeFood"
+                (change)="gettype()">
+            <option value="pizza">Pizza</option>
+            <option value="bocadillos">Bocadillos</option>
+            <option value="kebab">Kebab</option>
+            <option value="chino">Comida asiática</option>
+            <option value="mexicano">Comida mexicana</option>
+
+        </select>
+        <label for="usr"> in :</label>
+        <input type="text" class="form-control" id="usr" [(ngModel)]=city (change)="getPosition()">
+        <button class="btn btn-info" (click)="getRestaurant()"> Let's look!</button>
+        <div class="btn-group btn-group-toggle" data-toggle="buttons">
+            <label class="btn btn-secondary active" (click)="getOpenNow(true)">
+                <input type="radio" name="options" [(ngModel)]="openNow"
+                       autocomplete="off" checked> Open now
+            </label>
+            <label class="btn btn-secondary" (click)="getOpenNow(false)">
+                <input type="radio" name="options" [(ngModel)]="openNow"
+                       autocomplete="off"> Closed
+            </label>
+        </div>
+    </div>
+
+</div>
+<div class="container distaa">
+    <label for="cmn-toggle-4">Tags </label>
+    <input [(ngModel)]="togg" id="cmn-toggle-4" class="cmn-toggle cmn-toggle-round-flat" type="checkbox"
+           (click)="changetog()">
+    <label for="cmn-toggle-4"></label>
+    <button class="btn btn-info ml-5" (click)="nextPage()" [disabled]="diss" [hidden]="hid">More results</button>
+</div>

@@ -1,0 +1,41 @@
+.home {
+    text-align: center;
+    padding: 100px;
+}
+
+.ajus {
+    padding: 60px 0px;
+    text-align: center;
+}
+
+.center {
+    line-height: 1em;
+    text-align: center;
+    font-family: "Strawberry Blossom";
+    font-size: 50px;
+    min-height: 750px;
+}
+
+#titulo {
+    margin-top: 40px;
+    font-family: "Bad Habits";
+    font-size: 70px;
+
+}
+
+@font-face {
+    font-family: Strawberry Blossom;
+    src: url("../../assets/strawberry_blossom/Strawberry_Blossom.ttf");
+}
+
+@font-face {
+    font-family: Bad Habits;
+    src: url("../../assets/bad_habits/Bad_Habits.ttf");
+}
+
+.mystyle {
+    text-align: center;
+    font-family: GeosansLight;
+    font-size: 1rem;
+    padding: 0px 0px 0px 10px !important;
+}

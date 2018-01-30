@@ -1,0 +1,23 @@
+<div class="container marSup marInf">
+    <agm-map [latitude]=lat [longitude]=lng [zoom]=zoom [streetViewControl]="true" [mapTypeControl]="true"
+             [fullscreenControl]="true" (mapClick)="placeMarker($event)">
+        <agm-marker *ngIf="busqueda" [latitude]=lat [longitude]=lng>
+            <agm-info-window [isOpen]=togg>You are here right now!</agm-info-window>
+        </agm-marker>
+        <agm-marker *ngFor="let resu of restaurantes" [latitude]=resu.geometry.location.lat
+                    [longitude]=resu.geometry.location.lng>
+            <agm-info-window [isOpen]=togg [latitude]=resu.geometry.location.lat [longitude]=resu.geometry.location.lng>
+                {{resu?.name}}
+            </agm-info-window>
+        </agm-marker>
+    </agm-map>
+</div>
+
+<app-searcher></app-searcher>
+
+<div id="filtro" [hidden]=myvoid><label for="filt">Filtrado de hoteles: </label><input id="filt" type="text"
+                                                                                       [(ngModel)]=filtro></div>
+<section id="canvas" class="container">
+    <app-food-place *ngFor="let place of restaurantes | filtroBusquedas:filtro" [place]=place></app-food-place>
+</section>
+

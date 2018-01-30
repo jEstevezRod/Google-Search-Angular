@@ -1,0 +1,18 @@
+<span class="searcher">
+  <label for="usr">Search of the hotel:</label>
+  <input type="text" class="form-control" id="usr" [(ngModel)]=query
+         placeholder="hotel name">
+  <label for="ciudad">in </label>
+  <input type="text" class="form-control" placeholder="city name" id="ciudad" [(ngModel)]=city (change)="getPosition()">
+<button id="bus" type="button" class="btn btn-primary cool" (click)="getHotels()">Let's look!</button>
+</span>
+<div class="row">
+    <div class="col der">
+        <div class="switch">
+            <label for="cmn-toggle-4">Tags </label>
+            <input [(ngModel)]="togg" id="cmn-toggle-4" class="cmn-toggle cmn-toggle-round-flat" type="checkbox"
+                   (click)="changetog()">
+            <label for="cmn-toggle-4"></label>
+        </div>
+    </div>
+</div>

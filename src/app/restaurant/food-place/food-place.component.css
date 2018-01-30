@@ -1,0 +1,29 @@
+.star {
+    width: 25px;
+    height: 25px;
+}
+
+a {
+    text-decoration: none;
+}
+
+li {
+    list-style: none;
+}
+
+.card {
+    position: relative;
+    left: -25%;
+}
+
+.white-space-pre {
+    white-space: pre-wrap;
+}
+
+.dd {
+    margin-bottom: 10px;
+}
+
+.rojo {
+    color: tomato;
+}

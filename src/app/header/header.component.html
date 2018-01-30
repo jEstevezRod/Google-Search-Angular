@@ -1,0 +1,30 @@
+<section class="header" [ngStyle]="final">
+    <nav clas>
+        <ul class="nav justify-content-center ">
+            <img class="google" [src]="logo" alt="">
+            <li class="nav-item"><a class="nav-link" routerLink="/home" routerLinkActive="active">Home</a></li>
+            <li class="nav-item"><a class="nav-link" routerLink="/hotels" routerLinkActive="active">Hotels</a></li>
+            <li class="nav-item"><a class="nav-link" routerLink="/restaurant" routerLinkActive="active">Restaurant</a>
+            </li>
+            <li class="nav-item"><a class="nav-link" routerLink="/banks" routerLinkActive="active">Banks</a></li>
+            <li class="nav-item"><a class="nav-link" routerLink="/hospitals" routerLinkActive="active">Hospital</a></li>
+            <li class="nav-item"><a class="nav-link" routerLink="/parkings" routerLinkActive="active">Parking</a></li>
+            <li class="nav-item"><a class="nav-link" routerLink="/pharmacys" routerLinkActive="active">Pharmacy</a></li>
+
+            <li class="nav-item"><a href="#" data-target="#sidebar" data-toggle="collapse"><img class="settings"
+                                                                                                src="../../assets/imgs/settings.png"/></a>
+            </li>
+        </ul>
+    </nav>
+    <div class="container  ">
+        <ol class="breadcrumb panel">
+            <li class="breadcrumb-item"><a href="#">{{url}}</a></li>
+            <li class="breadcrumb-item active panel">{{ruta}}</li>
+        </ol>
+    </div>
+    <app-settings></app-settings>
+
+
+</section>
+
+

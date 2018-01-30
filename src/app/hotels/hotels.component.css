@@ -1,0 +1,80 @@
+
+agm-map {
+    height: 500px;
+    margin-bottom: 200px;
+}
+
+.marSup {
+    margin-top: 70px;
+}
+
+.marInf {
+    margin-bottom: 70px;
+}
+
+app-hotel {
+    background-color: #d3d3d3;
+    width: 32%;
+    height: 190px;
+    margin: 9px 7px;
+    box-sizing: border-box;
+    transition: all .2s ease-in-out;
+}
+
+app-hotel:hover {
+    transform: scale(1.05);
+    background-color: #ff4f5a;
+}
+
+#canvas {
+    box-sizing: border-box;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-start;
+    text-align: center;
+}
+
+section h1 {
+    flex: 1 100%;
+    margin-bottom: 30px;
+}
+
+.ask {
+    font-size: 34px;
+    width: 100%;
+}
+
+.container {
+    text-align: center;
+}
+
+.marg {
+    margin-top: 50px;
+}
+
+.esp {
+    margin-top: 40px;
+}
+
+.cool {
+    background-color: #ff4c4d;
+    border: 2px solid #ff4f5a;
+    padding: 15px 45px;
+    margin-bottom: 30px;
+}
+
+.peque {
+    width: 120px;
+    height: 80px;
+}
+
+#filt {
+    width: 150px;
+    height: 40px;
+}
+
+#filtro {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-end;
+}

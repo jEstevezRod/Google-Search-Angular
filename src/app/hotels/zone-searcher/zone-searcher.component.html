@@ -1,0 +1,37 @@
+<div class="row">
+    <div class="col-12"><span class="searcher">
+
+  <label for="ciudad">In </label>
+  <input type="text" placeholder="City name" class="form-control" id="ciudad" [(ngModel)]=city (change)="getPosition()">
+  <label for="radio">in a radius of: </label>
+
+  <select class="form-control" id="radio" [(ngModel)]=radio (change)="getRadio()">
+        <option *ngFor="let option of radios">{{option}}</option>
+  </select>
+
+  <p>metres</p>
+</span></div>
+
+</div>
+<div class="row">
+    <div class="col-5">
+        <button id="bus" type="button" class="btn cool" (click)="getHotels()">Let's look!
+        </button>
+    </div>
+    <div class="col-7">
+        <button id="next" type="button" class="btn cool" (click)="nextPage()" [disabled]="diss">More hotels</button>
+    </div>
+</div>
+<div class="row">
+    <div class="col der">
+        <div class="switch">
+            <label for="cmn-toggle-4">Tags </label>
+            <input [(ngModel)]="togg" id="cmn-toggle-4" class="cmn-toggle cmn-toggle-round-flat" type="checkbox"
+                   (click)="changetog()">
+            <label for="cmn-toggle-4"></label>
+        </div>
+    </div>
+</div>
+
+
+

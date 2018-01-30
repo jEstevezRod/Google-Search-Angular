@@ -1,0 +1,44 @@
+<div [ngStyle]="estilos">
+    <div class="container">
+        <div class="row marSup">
+            <div class="col-12"><span class="ask">Do you want to search for a specific hotel or area?</span></div>
+            <div class="col-4 marg">
+                <button type="button" class="btn btn-primary cool" (click)="showSearcher(true)">by name</button>
+            </div>
+            <div class="col-4 esp"><img class="peque" src="../../assets/imgs/direction.png" alt=""></div>
+            <div class="col-4 marg">
+                <button type="button" class="btn btn-primary cool" (click)="showSearcher(false)">by zone</button>
+            </div>
+        </div>
+        <app-zone-searcher *ngIf="byZone"></app-zone-searcher>
+        <app-name-searcher *ngIf="byName"></app-name-searcher>
+
+    </div>
+
+
+    <div class="container marSup marInf">
+        <agm-map [latitude]=lat [longitude]=lng [zoom]=zoom [streetViewControl]="true" [mapTypeControl]="true"
+                 [fullscreenControl]="true" (mapClick)="placeMarker($event)">
+            <agm-marker *ngIf="busqueda" [latitude]=lat [longitude]=lng>
+                <agm-info-window [isOpen]=togg>You are here right now!</agm-info-window>
+            </agm-marker>
+            <agm-marker *ngFor="let resu of resultados" [latitude]=resu.geometry.location.lat
+                        [longitude]=resu.geometry.location.lng>
+                <agm-info-window [isOpen]=togg [latitude]=resu.geometry.location.lat
+                                 [longitude]=resu.geometry.location.lng>
+                    {{resu?.name}}
+                </agm-info-window>
+            </agm-marker>
+            <agm-circle [latitude]=lat [longitude]=lng [radius]=radio [fillOpacity]=opacity
+                        [fillColor]="'#ff6347'" (drag)="true"></agm-circle>
+        </agm-map>
+    </div>
+
+    <div id="filtro" [hidden]=myvoid><label for="filt">Filtrado de hoteles: </label><input id="filt" type="text"
+                                                                                           [(ngModel)]=filtro></div>
+    <section id="canvas" class="container">
+        <h1 [hidden]=myvoid>Búsqueda de los hoteles</h1>
+        <app-hotel *ngFor="let hotel of resultados | filtroBusquedas:filtro" [hotel]=hotel></app-hotel>
+    </section>
+
+</div>

@@ -1,0 +1,127 @@
+<div class="container-fluid" [ngStyle]=colorbg>
+    <div class="row d-flex d-md-block flex-nowrap wrapper fixed">
+        <div class=" float-right pl-0 pr-0 collapse width" id="sidebar">
+            <div class="list-group border-0 card text-center text-md-left">
+
+
+                <a href="#menu1" class="list-group-item d-inline-block collapsed" data-toggle="collapse"
+                   data-parent="#sidebar"> <span
+                        class="d-none d-md-inline">Background color</span> </a>
+
+                <div class="collapse" id="menu1">
+
+                    <a href="#menu1sub1" class="list-group-item collapsed " data-parent="#menu1"
+                       data-toggle="collapse">Header </a>
+
+                    <div class="collapse" id="menu1sub1">
+                        <input data-parent="menu1sub1" class="form-control" type="text" [(ngModel)]=bgHeader
+                               (change)="bgchange()"
+                               placeholder="enter the color name "/>
+                    </div>
+
+                    <a href="#menu1sub2" class="list-group-item collapsed" data-parent="#menu1" data-toggle="collapse">Main
+                        content</a>
+
+                    <div class="collapse" id="menu1sub2">
+                        <input data-parent="menu1sub2" type="text" class="form-control" [(ngModel)]=bgMain
+                               (change)="bgchangemain()"
+                               placeholder="enter the color name "/>
+                    </div>
+
+                    <a href="#menu1sub3" class="list-group-item collapsed" data-parent="#menu1" data-toggle="collapse"
+                       aria-expanded="false">Footer</a>
+                    <div class="collapse" id="menu1sub3">
+
+                        <input data-parent="menu1sub3" type="text" class="form-control" [(ngModel)]=bgFooter
+                               (change)="bgchangefoot()" placeholder="enter the color name "/>
+
+                    </div>
+                </div>
+
+                <a href="#menu2" class="list-group-item d-inline-block collapsed" data-toggle="collapse"
+                   data-parent="#sidebar">
+                    <span class="d-none d-md-inline">Font type</span></a>
+
+                <div class="collapse" id="menu2">
+
+                    <a href="#menu2sub1" class="list-group-item collapsed" data-parent="#menu2" data-toggle="collapse"
+                       aria-expanded="false">Header </a>
+                    <div class="collapse" id="menu2sub1">
+
+                        <select class="custom-select selec sele" [(ngModel)]="font" (change)="fontchangehead()">
+                            <option class="list-group-item opt" value="GeosansLight" data-parent="menu2sub1" selected>
+                                Default
+                            </option>
+                            <option class="list-group-item opt" value="vcr" data-parent="menu2sub1">VCR osd mono
+                            </option>
+                            <option class="list-group-item opt" value="kindergarten" data-parent="menu2sub1"> Stranger
+                                Back
+                            </option>
+                            <option class="list-group-item opt" value="Millenia" data-parent="menu2sub1"> Millenia (
+                                Recommended )
+                            </option>
+                        </select>
+                    </div>
+
+                    <a href="#menu2sub2" class="list-group-item collapsed" data-parent="#menu2" data-toggle="collapse"
+                       aria-expanded="false">Main content</a>
+                    <div class="collapse" id="menu2sub2">
+
+                        <select class="custom-select selec sele" [(ngModel)]="fontmain" (change)="fontchangemain()">
+                            <option class="list-group-item opt" value="GeosansLight" data-parent="menu2sub2" selected>
+                                Default
+                            </option>
+                            <option class="list-group-item opt" value="vcr" data-parent="menu2sub2">VCR osd mono
+                            </option>
+                            <option class="list-group-item opt" value="kindergarten" data-parent="menu2sub2"> Stranger
+                                Back
+                            </option>
+                            <option class="list-group-item opt" value="Millenia" data-parent="menu2sub2"> Millenia (
+                                Recommended )
+                            </option>
+                        </select>
+                    </div>
+                    <a href="#menu2sub3" class="list-group-item collapsed" data-parent="#menu2" data-toggle="collapse"
+                       aria-expanded="false">Footer</a>
+                    <div class="collapse" id="menu2sub3">
+
+                        <select class="custom-select selec sele" [(ngModel)]="fontfooter" (change)="fontchangefoot()">
+                            <option class="list-group-item opt" value="GeosansLight" data-parent="menu2sub3" selected>
+                                Default
+                            </option>
+                            <option class="list-group-item opt" value="vcr" data-parent="menu2sub3">VCR osd mono
+                            </option>
+                            <option class="list-group-item opt" value="kindergarten" data-parent="menu2sub3"> Stranger
+                                Back
+                            </option>
+                            <option class="list-group-item opt" value="Millenia" data-parent="menu2sub3"> Millenia (
+                                Recommended )
+                            </option>
+                        </select>
+                    </div>
+                </div>
+
+
+                <a href="#menu3" class="list-group-item d-inline-block collapsed" data-toggle="collapse"
+                   data-parent="#sidebar"
+                   aria-expanded="false"> <span class="d-none d-md-inline">Logo de la página </span></a>
+                <div class="collapse" id="menu3">
+                    <a class="list-group-item" data-parent="#menu3" (click)="imgchange('luffy.png')">Logo One piece</a>
+                    <a data-parent="menu3" href="#menu3sub2" class="list-group-item" data-toggle="collapse"
+                       aria-expanded="false">Equipos</a>
+                    <div class="collapse" id="menu3sub2" data-parent="#menu3">
+                        <a class="list-group-item" data-parent="#menu3sub2"
+                           (click)="imgchange('madrid.png')">Real Madrid CF</a>
+                        <a class="list-group-item" data-parent="#menu3sub2"
+                           (click)="imgchange('barsa.png')">Barcelona</a>
+                        <a class="list-group-item" data-parent="#menu3sub2"
+                           (click)="imgchange('almeria.png')">Almeria</a>
+                    </div>
+                    <a class="list-group-item" data-parent="#menu3" (click)="imgchange('google.png')">Logo de Google</a>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</div>
